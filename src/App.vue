@@ -2,6 +2,7 @@
 import MyProfile from './components/MyProfile.vue';
 
 import HelloWorld from './components/HelloWorld.vue';
+import UserCardParent from './components/UserCardParent.vue';
 // export default {
 //   name: "App",
 //   components: {
@@ -52,7 +53,9 @@ export default {
 
   components: {
     MyProfile,
-    HelloWorld
+    HelloWorld,
+    UserCardParent
+
   }
 
 }
@@ -132,6 +135,7 @@ export default {
   <div v-if="condition">
     <MyProfile />
   </div>
+  <user-card-parent />
 </template>
 <style>
 body {
