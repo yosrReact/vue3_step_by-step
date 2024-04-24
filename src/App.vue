@@ -129,9 +129,9 @@ export default {
     </template>
   </ul>
   <h1>Life cycle</h1>
-  <!-- <div v-show="condition"> -->
-  <MyProfile />
-  <!-- </div> -->
+  <div v-if="condition">
+    <MyProfile />
+  </div>
 </template>
 <style>
 body {

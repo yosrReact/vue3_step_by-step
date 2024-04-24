@@ -7,7 +7,7 @@
     </div>
 </template>
 <script setup>
-import { ref, computed, onMounted, onUnmounted, onUpdated, onBeforeMount, onBeforeUpdate, } from 'vue'
+import { ref, computed, onMounted, onUnmounted, onUpdated, onBeforeMount, onBeforeUpdate, onBeforeUnmount } from 'vue'
 
 const firstName = ref("Yosr")
 const lastName = ref("Naija")
@@ -31,6 +31,9 @@ onUpdated(() => {
     console.log("onUpdated ", firstName.value)
 }
 )
+onBeforeUnmount(() => {
+    console.log("onBeforeUnmount ", firstName.value)
+})
 onUnmounted(() => {
     console.log("onUnmounted ", firstName.value)
 
