@@ -1,7 +1,7 @@
 <script>
 import MyProfile from './components/MyProfile.vue';
 
-// import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/HelloWorld.vue';
 // export default {
 //   name: "App",
 //   components: {
@@ -39,6 +39,7 @@ export default {
     }
   },
 
+
   methods: {
 
     hello(name) {
@@ -50,7 +51,8 @@ export default {
   },
 
   components: {
-    MyProfile
+    MyProfile,
+    HelloWorld
   }
 
 }
@@ -126,6 +128,10 @@ export default {
       </li>
     </template>
   </ul>
+  <h1>Life cycle</h1>
+  <!-- <div v-show="condition"> -->
+  <MyProfile />
+  <!-- </div> -->
 </template>
 <style>
 body {
