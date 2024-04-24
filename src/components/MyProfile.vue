@@ -16,5 +16,4 @@ function rename() {
     lastName.value = "Smith"
 }
 const fullName = computed(() => `${firstName.value} ${lastName.value}`)
-
 </script>
