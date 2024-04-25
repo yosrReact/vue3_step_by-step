@@ -6,6 +6,7 @@ import UserCardParent from './components/UserCardParent.vue';
 import SearchForm from './components/SearchForm.vue';
 import AddItem from './components/AddItem.vue';
 import AddItemOptions from './components/AddItemOptions.vue';
+import InputDataBinding from './components/InputDataBinding.vue';
 // export default {
 //   name: "App",
 //   components: {
@@ -65,7 +66,8 @@ export default {
     UserCardParent,
     SearchForm,
     AddItem,
-    AddItemOptions
+    AddItemOptions,
+    InputDataBinding
 
   }
 
@@ -159,6 +161,8 @@ export default {
       {{ item }}
     </li>
   </ul>
+  <h1>Input data binding</h1>
+  <input-data-binding />
 </template>
 <style>
 body {
