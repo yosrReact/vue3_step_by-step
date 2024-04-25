@@ -3,6 +3,9 @@ import MyProfile from './components/MyProfile.vue';
 
 import HelloWorld from './components/HelloWorld.vue';
 import UserCardParent from './components/UserCardParent.vue';
+import SearchForm from './components/SearchForm.vue';
+import AddItem from './components/AddItem.vue';
+import AddItemOptions from './components/AddItemOptions.vue';
 // export default {
 //   name: "App",
 //   components: {
@@ -33,9 +36,10 @@ export default {
         },
         {
           name: "Orange", price: 10, active: true
-        }
+        },
 
-      ]
+      ],
+      items: []
 
     }
   },
@@ -48,13 +52,20 @@ export default {
     },
     toggleCondition() {
       this.condition = !this.condition
+    },
+    onAddItem(payload) {
+      console.log("input :", payload)
+      this.items.push(payload)
     }
   },
 
   components: {
     MyProfile,
     HelloWorld,
-    UserCardParent
+    UserCardParent,
+    SearchForm,
+    AddItem,
+    AddItemOptions
 
   }
 
@@ -135,7 +146,19 @@ export default {
   <div v-if="condition">
     <MyProfile />
   </div>
+  <h1>Props</h1>
+
   <user-card-parent />
+  <h1>Events</h1>
+  <search-form />
+  <h1>Custom events</h1>
+  <add-item @add="onAddItem" />
+  <add-item-options @add="onAddItem" />
+  <ul>
+    <li v-for="item in items" :key="item">
+      {{ item }}
+    </li>
+  </ul>
 </template>
 <style>
 body {
