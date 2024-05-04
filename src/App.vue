@@ -7,6 +7,7 @@ import SearchForm from './components/SearchForm.vue';
 import AddItem from './components/AddItem.vue';
 import AddItemOptions from './components/AddItemOptions.vue';
 import InputDataBinding from './components/InputDataBinding.vue';
+import Layout from './components/Layout.vue';
 // export default {
 //   name: "App",
 //   components: {
@@ -67,8 +68,8 @@ export default {
     SearchForm,
     AddItem,
     AddItemOptions,
-    InputDataBinding
-
+    InputDataBinding,
+    Layout
   }
 
 }
@@ -165,11 +166,24 @@ export default {
     </ul>
     <h1>Input data binding</h1>
     <input-data-binding />
+
+    <h1>Watchers</h1>
+    <search-form />
+
   </template>
-  <h1>Watchers</h1>
-  <search-form />
-
-
+  <layout>
+    <!-- it is a v-slot:default -->
+    <p>
+      Hello
+    </p>
+    <!-- end of it is a v-slot:footer -->
+    <template v-slot:footer>
+      <!-- or we can use <template #footer> -->
+      <div>
+        it is a footer
+      </div>
+    </template>
+  </layout>
 </template>
 <style>
 body {
