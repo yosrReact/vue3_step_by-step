@@ -40,7 +40,7 @@ export default {
         },
 
       ],
-      items: []
+      items: [],
 
     }
   },
@@ -75,94 +75,101 @@ export default {
 </script>
 
 <template>
-  <h1>Use of reactive data</h1>
-  <!-- we have to return a value -->
-  <p>{{ 'This is my message :' + message }}</p>
+  <template v-if="false">
 
-  <br />
-  <h1>Use of conditions</h1>
+    <h1>Use of reactive data</h1>
+    <!-- we have to return a value -->
+    <p>{{ 'This is my message :' + message }}</p>
 
-  <strong>1st solution</strong>
+    <br />
+    <h1>Use of conditions</h1>
 
-  <p>{{ condition ? message : "no display " }}</p>
-  <strong>2nd solution</strong>
-  <p v-if="condition">{{ message }}</p>
-  <p v-else>no-display</p>
-  <br />
-  <h1>Use of html content</h1>
+    <strong>1st solution</strong>
 
-  <p v-html="htmlContent"></p>
-  <br />
-  <h1>Use of events</h1>
+    <p>{{ condition ? message : "no display " }}</p>
+    <strong>2nd solution</strong>
+    <p v-if="condition">{{ message }}</p>
+    <p v-else>no-display</p>
+    <br />
+    <h1>Use of html content</h1>
 
-  <button @click="$event => hello('John')">Change message</button>
-  <br />
-  <br />
+    <p v-html="htmlContent"></p>
+    <br />
+    <h1>Use of events</h1>
 
-  <button @click="toggleCondition">Toggle Condition</button>
+    <button @click="$event => hello('John')">Change message</button>
+    <br />
+    <br />
 
-  <br />
-  <h1>Use of v-bind</h1>
-  <strong>1st solution : </strong>
-  <a v-bind:href="link">Link to google</a>
-  <br />
-  <strong>2nd solution : </strong>
-  <a :href="link">Link to google</a>
+    <button @click="toggleCondition">Toggle Condition</button>
 
-  <h1>Use of v-bind : another example </h1>
-  <input :disabled="condition" :placeholder="message" />
-  <input v-bind="inputAttributes" />
-  <br />
-  <h1>Use of v-for</h1>
-  <ul>
-    <li v-for="fruit in fruits" :key="fruit">
-      {{ fruit.name }}: {{ fruit.price }}
-    </li>
-  </ul>
+    <br />
+    <h1>Use of v-bind</h1>
+    <strong>1st solution : </strong>
+    <a v-bind:href="link">Link to google</a>
+    <br />
+    <strong>2nd solution : </strong>
+    <a :href="link">Link to google</a>
 
-  <ul>
-    <li v-for="(fruit, index) in fruits" :key="index">
-      {{ fruit.name }}: {{ fruit.price }}
-    </li>
-  </ul>
-  <ul>
-    <li v-for="({ name, price }, index) in fruits" :key="index">
-      {{ name }}: {{ price }}
-    </li>
-  </ul>
-  <ul>
-    <template v-for="({ name, price, active }, index) in fruits" :key="index">
-      <li v-if="active">
+    <h1>Use of v-bind : another example </h1>
+    <input :disabled="condition" :placeholder="message" />
+    <input v-bind="inputAttributes" />
+    <br />
+    <h1>Use of v-for</h1>
+    <ul>
+      <li v-for="fruit in fruits" :key="fruit">
+        {{ fruit.name }}: {{ fruit.price }}
+      </li>
+    </ul>
+
+    <ul>
+      <li v-for="(fruit, index) in fruits" :key="index">
+        {{ fruit.name }}: {{ fruit.price }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="({ name, price }, index) in fruits" :key="index">
         {{ name }}: {{ price }}
       </li>
-    </template>
-  </ul>
-  <ul>
-    <template v-for="({ name, price, active }, index) in fruits" :key="index">
-      <li v-show="active">
-        {{ name }}: {{ price }}
-      </li>
-    </template>
-  </ul>
-  <h1>Life cycle</h1>
-  <div v-if="condition">
-    <MyProfile />
-  </div>
-  <h1>Props</h1>
+    </ul>
+    <ul>
+      <template v-for="({ name, price, active }, index) in fruits" :key="index">
+        <li v-if="active">
+          {{ name }}: {{ price }}
+        </li>
+      </template>
+    </ul>
+    <ul>
+      <template v-for="({ name, price, active }, index) in fruits" :key="index">
+        <li v-show="active">
+          {{ name }}: {{ price }}
+        </li>
+      </template>
+    </ul>
+    <h1>Life cycle</h1>
+    <div v-if="condition">
+      <MyProfile />
+    </div>
+    <h1>Props</h1>
 
-  <user-card-parent />
-  <h1>Events</h1>
+    <user-card-parent />
+    <h1>Events</h1>
+    <search-form />
+    <h1>Custom events</h1>
+    <add-item @add="onAddItem" />
+    <add-item-options @add="onAddItem" />
+    <ul>
+      <li v-for="item in items" :key="item">
+        {{ item }}
+      </li>
+    </ul>
+    <h1>Input data binding</h1>
+    <input-data-binding />
+  </template>
+  <h1>Watchers</h1>
   <search-form />
-  <h1>Custom events</h1>
-  <add-item @add="onAddItem" />
-  <add-item-options @add="onAddItem" />
-  <ul>
-    <li v-for="item in items" :key="item">
-      {{ item }}
-    </li>
-  </ul>
-  <h1>Input data binding</h1>
-  <input-data-binding />
+
+
 </template>
 <style>
 body {
