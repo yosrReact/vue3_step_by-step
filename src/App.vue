@@ -170,20 +170,39 @@ export default {
     <h1>Watchers</h1>
     <search-form />
 
+
+    <layout>
+      <!-- it is a v-slot:default -->
+      <p>
+        Hello
+      </p>
+      <!-- end of it is a v-slot:footer -->
+      <template v-slot:footer>
+        <!-- or we can use <template #footer> -->
+        <div>
+          it is a footer
+        </div>
+      </template>
+    </layout>
   </template>
-  <layout>
-    <!-- it is a v-slot:default -->
-    <p>
-      Hello
-    </p>
-    <!-- end of it is a v-slot:footer -->
-    <template v-slot:footer>
-      <!-- or we can use <template #footer> -->
-      <div>
-        it is a footer
-      </div>
-    </template>
-  </layout>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <router-link :to="{ name: 'home' }" act>Home</router-link>
+
+          <!-- <router-link to=" /" act>Home</router-link> -->
+        </li>
+        <li>
+          <router-link :tp="{ name: 'about' }">About</router-link>
+
+          <!-- <router-link to="/about">About</router-link> -->
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+  <router-view></router-view>
 </template>
 <style>
 body {
