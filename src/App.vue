@@ -189,14 +189,18 @@ export default {
     <nav>
       <ul>
         <li>
-          <router-link :to="{ name: 'home' }" act>Home</router-link>
+          <router-link :to="{ name: 'home' }">Home</router-link>
 
-          <!-- <router-link to=" /" act>Home</router-link> -->
+          <!-- <router-link to=" /" >Home</router-link> -->
         </li>
         <li>
-          <router-link :tp="{ name: 'about' }">About</router-link>
+          <router-link :to="{ name: 'about' }">About</router-link>
 
           <!-- <router-link to="/about">About</router-link> -->
+        </li>
+        <li>
+          <router-link :to="{ name: 'users' }">Users</router-link>
+
         </li>
       </ul>
 

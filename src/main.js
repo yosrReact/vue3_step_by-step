@@ -4,12 +4,10 @@ import App from "./App.vue"
 import HelloWorld from "./components/HelloWorld.vue"
 import HomePage from "./pages/HomePage.vue"
 import AboutPage from "./pages/AboutPage.vue"
+import routes from "./routes/app.routes"
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    { name: "home", path: "/", component: HomePage }, // we can have <template> instead of component
-    { name: "about", path: "/about", component: AboutPage },
-  ],
+  routes,
   //   routes: [
   //     { path: "/", component: HomePage }, // we can have <template> instead of component
   //     { path: "/about", component: AboutPage },
